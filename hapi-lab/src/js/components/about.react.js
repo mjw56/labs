@@ -1,4 +1,5 @@
 import * as React from 'react';
+import request from '../utils/request';
 
 export default React.createClass({
 
@@ -11,7 +12,8 @@ export default React.createClass({
   render() {
     return (
       <div>
-        { !this.props.data.about ? 'Loading...' : <p>{this.props.data.about}</p>}
+        <p>About</p>
+        {this.props.data.about}
       </div>
     );
   }

@@ -1,4 +1,4 @@
-export default request = function(url) {
+function request(url) {
   if (request._cache[url])
     return Promise.resolve(request._cache[url]);
 
@@ -21,3 +21,5 @@ export default request = function(url) {
   });
 }
 request._cache = {};
+
+export default request;

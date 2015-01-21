@@ -1,13 +1,18 @@
-var Hapi = require('hapi');
+import Hapi from 'hapi';
 import fs from 'fs';
 import * as React from 'react';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import config from './webpack.config';
 import Index from './src/js/components/index.react';
+import * as Router from 'react-router';
+import Routes from './src/js/utils/routes';
+import FetchData from './src/js/utils/fetch-data';
+
+let { DefaultRoute, Route, RouteHandler } = Router;
 
 // Create a server with a host and port
-var server = new Hapi.Server({
+let server = new Hapi.Server({
   connections: {
     routes: {
       cors: true
@@ -23,7 +28,7 @@ server.connection({
 server.route([
   {
     method: 'GET',
-    path:'/hapi',
+    path:'/',
     handler: function (request, reply) {
       reply({ message: "hapi data" });
     }
@@ -40,16 +45,34 @@ server.route([
 // Start the server
 server.start();
 
-fs.writeFileSync('index.html', React.renderToString(React.createElement(Index, {
-  title: 'Hapi Lab',
-  children: 'Hello World!'
-})));
+let props = {
+  data: {
+    home: 'hapi server data',
+    about: 'about server data'
+  }
+};
 
-new WebpackDevServer(webpack(config), {
+Router.run(Routes, '/',  function (Handler, state) {
+  FetchData(state.routes, state.params).then((data) => {
+    fs.writeFileSync('index.html', React.renderToString(React.createElement(Handler, { data: data })));
+  });
+});
+
+let webpackSrv = new WebpackDevServer(webpack(config), {
   contentBase: './',
   publicPath: config.output.publicPath,
   hot: true
-}).listen(3000, '0.0.0.0', (err, result) => {
+});
+
+webpackSrv.use('/', function(req, res) {
+  Router.run(Routes, req.path,  function (Handler, state) {
+    FetchData(state.routes, state.params).then((data) => {
+      res.send(React.renderToString(React.createElement(Handler, { data: data })));
+    });
+  });
+});
+
+webpackSrv.listen(3000, '0.0.0.0', (err, result) => {
 
   if (err) {
     console.log(err);

@@ -1,7 +1,11 @@
 var React = require('react');
+var Router = require('react-router');
+var Header = require('./header.react');
 
-var Index = React.createClass({
-  render() {
+var { RouteHandler } = Router;
+
+var Index =  React.createClass({
+  render: function() {
     var scripts = [
       <script key="1" src="http://localhost:3000/dist/bundle.js"></script>,
       <script key="2" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -19,7 +23,9 @@ var Index = React.createClass({
           <title>{this.props.title}</title>
         </head>
         <body>
-          {this.props.children}
+          <Header />
+
+          <RouteHandler {...this.props}/>
           {scripts}
         </body>
       </html>
