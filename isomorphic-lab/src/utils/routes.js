@@ -1,14 +1,15 @@
 import * as React from 'react';
 import * as Router from 'react-router';
-import Index from './components/index.react';
-import Home from './components/home.react';
+import Index from '../components/index.react';
+import Home from '../components/home.react';
+import About from '../components/about.react';
 
-let { DefaultRoute, Route, RouteHandler } = Router;
+let { DefaultRoute, Route, RouteHandler, NotFoundRoute } = Router;
 
-var routes = (
-  <Route handler={Index} path="/">
-    <DefaultRoute name="home" handler={Home} />
+export default (
+  <Route name="index" path="/" handler={Index}>
+    <Route name="about" handler={About}/>
+
+    <DefaultRoute name="home" handler={Home}/>
   </Route>
 );
-
-module.exports = routes;
