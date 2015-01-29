@@ -1,0 +1,14 @@
+{
+  "name": "react-classes-lab",
+  "version": "1.0.0",
+  "description": "react classes lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Wilcox <mwilcox56@gmail.com> (http://github.com/mjw56)",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^0.13.0-beta.1"
+  }
+}
