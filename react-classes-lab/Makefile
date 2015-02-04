@@ -6,4 +6,4 @@ hello:
 	@echo "\n${WELCOME}\n"
 
 browserify:
-	@browserify src/components/HelloMessage.js -t 6to5ify --outfile dist/bundle.js && 6to5-node server.js
+	@browserify src/components/HelloMessage.ts -p tsify --outfile dist/bundle.js && 6to5-node server.js
