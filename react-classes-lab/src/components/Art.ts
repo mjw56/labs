@@ -2,6 +2,7 @@
 
   import React = require('react');
   import webAPI = require('../utils/web-api');
+  import styles = require('../styles/app');
 
   interface State {
     id: string
@@ -19,21 +20,21 @@
     constructor(props: Props) {
       super(props);
 
-    this.state = { id: 'Art', posts: [] };
-  }
+      this.state = { id: 'Art', posts: [] };
+    }
 
   componentDidMount() {
     webAPI.getPosts(this.props.url)
       .then((posts) => {
           this.setState({ posts: webAPI.extractPosts(posts) })
-      })
+      });
   }
 
   render() {
 
     var renderImages = () => {
       return this.state.posts.map((post, i) => {
-        return React.createElement('img', { key: i, src: post });
+        return React.createElement('img', { key: i, src: post, style: styles.img });
       });
     }
 
