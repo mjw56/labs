@@ -1,0 +1,7 @@
+img {
+  display: block;
+  float: left;
+  width: 70vw;
+  height: 70vh;
+  object-fit: cover;
+}
