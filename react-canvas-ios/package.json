@@ -1,0 +1,30 @@
+{
+  "name": "react-canvas-ios",
+  "version": "1.0.0",
+  "description": "react canvas on iOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/gulp"
+  },
+  "author": "Mike Wilcox <mwilcox56@gmail.com> (http://github.com/mjw56)",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "envify": "^3.2.0",
+    "gulp": "^3.8.10",
+    "gulp-connect": "^2.2.0",
+    "gulp-webpack": "^1.2.0",
+    "jsx-loader": "^0.12.2",
+    "react": "^0.13.0-beta.1",
+    "react-canvas": "^0.0.1",
+    "transform-loader": "^0.2.1",
+    "webpack": "^1.5.3"
+  },
+  "peerDependencies": {
+    "react": "^0.13.0-beta.1"
+  },
+  "dependencies": {
+    "scroller": "git://github.com/mjohnston/scroller"
+  }
+}
