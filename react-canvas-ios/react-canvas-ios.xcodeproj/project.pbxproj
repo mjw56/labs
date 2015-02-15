@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		68635B981A8C4613001CB25D /* listview.js in Resources */ = {isa = PBXBuildFile; fileRef = 689DA0E81A8C430600F117DE /* listview.js */; };
-		68635B991A8C461A001CB25D /* examples.css in Resources */ = {isa = PBXBuildFile; fileRef = 689DA0E91A8C430600F117DE /* examples.css */; };
-		68635B9A1A8C4620001CB25D /* touch-emulator.js in Resources */ = {isa = PBXBuildFile; fileRef = 689DA0EA1A8C430600F117DE /* touch-emulator.js */; };
-		68635B9C1A8D79EB001CB25D /* build in Resources */ = {isa = PBXBuildFile; fileRef = 68635B9B1A8D79EB001CB25D /* build */; };
+		6846DDCA1A900B2B009E4C44 /* build in Resources */ = {isa = PBXBuildFile; fileRef = 6846DDC91A900B2B009E4C44 /* build */; };
+		6846DDCC1A900C3F009E4C44 /* common in Resources */ = {isa = PBXBuildFile; fileRef = 6846DDCB1A900C3F009E4C44 /* common */; };
 		689DA0C71A8C3FB300F117DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689DA0C61A8C3FB300F117DE /* AppDelegate.swift */; };
 		689DA0C91A8C3FB300F117DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689DA0C81A8C3FB300F117DE /* ViewController.swift */; };
 		689DA0CC1A8C3FB300F117DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689DA0CA1A8C3FB300F117DE /* Main.storyboard */; };
@@ -31,7 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		68635B9B1A8D79EB001CB25D /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = SOURCE_ROOT; };
+		6846DDC91A900B2B009E4C44 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
+		6846DDCB1A900C3F009E4C44 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = common; path = examples/common; sourceTree = "<group>"; };
 		689DA0C11A8C3FB300F117DE /* react-canvas-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "react-canvas-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		689DA0C51A8C3FB300F117DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689DA0C61A8C3FB300F117DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +42,6 @@
 		689DA0DB1A8C3FB300F117DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		689DA0DC1A8C3FB300F117DE /* react_canvas_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = react_canvas_iosTests.swift; sourceTree = "<group>"; };
 		689DA0E61A8C412E00F117DE /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		689DA0E81A8C430600F117DE /* listview.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = listview.js; sourceTree = "<group>"; };
-		689DA0E91A8C430600F117DE /* examples.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = examples.css; sourceTree = "<group>"; };
-		689DA0EA1A8C430600F117DE /* touch-emulator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "touch-emulator.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +65,8 @@
 		689DA0B81A8C3FB300F117DE = {
 			isa = PBXGroup;
 			children = (
+				6846DDCB1A900C3F009E4C44 /* common */,
+				6846DDC91A900B2B009E4C44 /* build */,
 				689DA0C31A8C3FB300F117DE /* react-canvas-ios */,
 				689DA0D91A8C3FB300F117DE /* react-canvas-iosTests */,
 				689DA0C21A8C3FB300F117DE /* Products */,
@@ -87,10 +85,6 @@
 		689DA0C31A8C3FB300F117DE /* react-canvas-ios */ = {
 			isa = PBXGroup;
 			children = (
-				68635B9B1A8D79EB001CB25D /* build */,
-				689DA0E81A8C430600F117DE /* listview.js */,
-				689DA0E91A8C430600F117DE /* examples.css */,
-				689DA0EA1A8C430600F117DE /* touch-emulator.js */,
 				689DA0C61A8C3FB300F117DE /* AppDelegate.swift */,
 				689DA0C81A8C3FB300F117DE /* ViewController.swift */,
 				689DA0CA1A8C3FB300F117DE /* Main.storyboard */,
@@ -207,12 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68635B9A1A8C4620001CB25D /* touch-emulator.js in Resources */,
-				68635B991A8C461A001CB25D /* examples.css in Resources */,
-				68635B981A8C4613001CB25D /* listview.js in Resources */,
+				6846DDCC1A900C3F009E4C44 /* common in Resources */,
+				6846DDCA1A900B2B009E4C44 /* build in Resources */,
 				689DA0CC1A8C3FB300F117DE /* Main.storyboard in Resources */,
 				689DA0E71A8C412E00F117DE /* index.html in Resources */,
-				68635B9C1A8D79EB001CB25D /* build in Resources */,
 				689DA0D11A8C3FB300F117DE /* LaunchScreen.xib in Resources */,
 				689DA0CE1A8C3FB300F117DE /* Images.xcassets in Resources */,
 			);
