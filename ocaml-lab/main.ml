@@ -32,4 +32,49 @@ let rec hilo n =
         hilo n
       end ;;
 
-hilo 73;;
+(*hilo 73;;*)
+
+(* classes *)
+class point =
+  object
+    val mutable x = 21
+    method get_x = x
+    method move d = x <- x + d
+  end;;
+
+let p = new point;;
+p#move 21;;
+
+print_int (p#get_x);; print_newline();;
+
+(* class as function *)
+class pointfunc x_init =
+  object
+    val mutable x = x_init
+    method get_x = x
+    method move d = x <- x + d
+  end;;
+
+let p2 = new pointfunc 33;;
+print_int (p2#get_x);; print_newline();;
+
+let pobj =
+  object
+    val mutable x = 12
+    method get_x = x
+    method move d = x <- x + d
+  end;;
+
+print_int (pobj#get_x);; print_newline();;
+
+(* exceptions *)
+exception Empty_list;;
+
+let head l =
+  match l with
+    [] -> raise Empty_list
+  | hd :: tl -> hd;;
+
+head [1;2];;
+
+head [];;
